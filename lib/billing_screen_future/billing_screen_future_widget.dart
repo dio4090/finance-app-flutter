@@ -16,17 +16,17 @@ import 'package:sizer/sizer.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const BillingScreenWidget());
+  runApp(const BillingScreenFutureWidget());
 }
 
-class BillingScreenWidget extends StatefulWidget {
-  const BillingScreenWidget({Key key}) : super(key: key);
+class BillingScreenFutureWidget extends StatefulWidget {
+  const BillingScreenFutureWidget({Key key}) : super(key: key);
 
   @override
   _BillingBcreeSWidgetState createState() => _BillingBcreeSWidgetState();
 }
 
-class _BillingBcreeSWidgetState extends State<BillingScreenWidget> {
+class _BillingBcreeSWidgetState extends State<BillingScreenFutureWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final CollectionReference _transactions =
@@ -78,7 +78,7 @@ class _BillingBcreeSWidgetState extends State<BillingScreenWidget> {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF4E4EFF),
-          title: const Text('Lista de transações desse mês', textAlign: TextAlign.center),
+          title: const Text('Lista de transações para o próximo mês', textAlign: TextAlign.center),
         ),
         // Using StreamBuilder to display all products from Firestore in real-time
         body: Stack(

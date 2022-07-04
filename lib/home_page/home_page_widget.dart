@@ -1,3 +1,7 @@
+import 'package:app_firebase/billing_screen_future/billing_screen_future_widget.dart';
+import 'package:app_firebase/billing_screen_past/billing_screen_past_widget.dart';
+import 'package:app_firebase/flutter_flow/flutter_flow_widgets.dart';
+import 'package:app_firebase/user_settings/user_settings_widget.dart';
 import 'package:sizer/sizer.dart';
 
 import '../billing_screen/billing_screen_widget.dart';
@@ -65,15 +69,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
       return Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFF4B39EF),
           automaticallyImplyLeading: false,
           title: Text(
-            'Seu Orçamento',
+            'Seu Orçamento Geral',
             style: FlutterFlowTheme.of(context).title2.override(
                   fontFamily: 'Lexend Deca',
-                  color: Color(0xFF090F13),
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFF1F4F8),
+                  fontSize: 24,
+                  fontWeight: FontWeight.normal,
                 ),
           ),
           actions: [],
@@ -120,7 +124,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Income',
+                                'Renda',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
@@ -207,7 +211,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Spending',
+                                'Gastos',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
@@ -294,7 +298,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => BillingScreenWidget(),
+                                  builder: (context) =>
+                                      BillingScreenPastWidget(),
                                 ),
                               );
                             },
@@ -560,7 +565,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => BillingScreenWidget(),
+                                  builder: (context) =>
+                                      BillingScreenFutureWidget(),
                                 ),
                               );
                             },
@@ -665,6 +671,42 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.w, 10.h, 20.w, 0),
+                      child: Container(
+                        child: Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UserSettingsWidget(),
+                                ),
+                              );
+                            },
+                            text: 'Configurações',
+                            options: FFButtonOptions(
+                              width: 160,
+                              height: 60,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                              borderRadius: 12,
                             ),
                           ),
                         ),
