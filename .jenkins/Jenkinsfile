@@ -1,7 +1,7 @@
 @Library('2code-jenkins@main')
-import br.com.isi.Commands
-import br.com.isi.ProjectMetadata
-
+import br.com.sceneboard.Commands
+import br.com.sceneboard.ProjectMetadata
+ 
 def projectMetadata = new ProjectMetadata();
 def cmd = new Commands();
 
