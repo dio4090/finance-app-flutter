@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  finance-web:
+    image: finance-app-flutter:latest
+    container_name: finance-app-flutter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - qualitygate
+
+networks:
+  qualitygate:

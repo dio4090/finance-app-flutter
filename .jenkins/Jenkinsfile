@@ -1,0 +1,13 @@
+@Library('jenkins_lib@master')
+import br.com.isi.Commands
+import br.com.isi.ProjectMetadata
+
+def projectMetadata = new ProjectMetadata();
+def cmd = new Commands();
+
+projectMetadata.projectName = "finance-flutter-web"
+projectMetadata.dockerfile = "Dockerfile"
+projectMetadata.language = "financeFlutterWeb"
+projectMetadata.version = "1.0"
+
+cmd.exec(projectMetadata);
