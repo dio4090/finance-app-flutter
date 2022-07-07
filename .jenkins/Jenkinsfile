@@ -1,4 +1,4 @@
-@Library('jenkins_lib@master')
+@Library('2code-jenkins@mian')
 import br.com.isi.Commands
 import br.com.isi.ProjectMetadata
 
